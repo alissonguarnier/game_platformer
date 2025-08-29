@@ -2,25 +2,19 @@ import random
 from pgzero.builtins import Actor, Rect, keyboard, keys, mouse
 import pgzrun
 
-# Configurações
 WIDTH = 800; HEIGHT = 600; GRAVITY = 0.6
 JUMP_STRENGTH = -12; PLAYER_SPEED = 5; ENEMY_SPEED = 2.5
 SCROLL_THRESHOLD = 400
 
-# Estado
 MENU = 0; PLAYING = 1; GAME_OVER = 2; game_state = MENU
 
-# Música
 music_playing = True; music_button = Rect(300, 450, 200, 50)
 
-# Herói
 player = Actor('stand', (100, 400)); player.vy = 0; player.on_ground = True
 player.direction = 1; player.width = 30; player.height = 50; player.walk_frame = 0; player.idle_frame = 0
 
-# Inimigos
 enemies = []; enemy_spawn_timer = 0
 
-# Plataformas
 platforms = [
     Rect(0, 550, 800, 50),
     Rect(250, 450, 200, 20),
